@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 100px;
+        }
+
+        div#res {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+
+    De onde você é? <input type="text" name="nacio" id="nacio">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+        Carregando...
+    </div>
+
+    <script>
+        function verificar() {
+            var nasc = window.document.getElementById('nacio')
+
+            var res = window.document.getElementById('res')
+
+            res.innerHTML = `<p>Vivendo em:  <strong>${nasc.value}</strong></p>`
+
+            if (nasc.value == 'Brasil') {
+                res.innerHTML += '<p>Você é Brasileiro!</p>'
+            } else {
+                res.innerHTML += '<p>Você é Estrangeiro!</p>'
+            }
+        }
+    </script>
+</body>
+</html>
